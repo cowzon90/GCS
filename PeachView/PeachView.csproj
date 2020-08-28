@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DEB9695-B590-4DAF-A85E-564004AC7352}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PeachView</RootNamespace>
+    <AssemblyName>PeachView</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=2.0.1.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.Core.2.0.1\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=2.0.1.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WinForms.2.0.1\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Arrow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CircleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\HeadUpDisplay\HudRight.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\DualTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\HeadUpDisplay\HudLeft.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeListView\pListViewItem.cs" />
+    <Compile Include="Components\TreeListView\pTreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\FormConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\FormConnection.Designer.cs">
+      <DependentUpon>FormConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeachGS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeachGS.Designer.cs">
+      <DependentUpon>PeachGS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeachGS2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeachGS2.Designer.cs">
+      <DependentUpon>PeachGS2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ucs\Common\CustomTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\FormInputText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\FormInputText.Designer.cs">
+      <DependentUpon>FormInputText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Common\IUcTops.cs" />
+    <Compile Include="Ucs\Common\ListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\ListUserControl.Designer.cs">
+      <DependentUpon>ListUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Common\UcCommandTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\UcCommandTest.Designer.cs">
+      <DependentUpon>UcCommandTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Common\UcConnectedVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\UcConnectedVehicle.Designer.cs">
+      <DependentUpon>UcConnectedVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Common\UcRadioSignal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\UcRadioSignal.Designer.cs">
+      <DependentUpon>UcRadioSignal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Common\UcVehicleStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\UcVehicleStatus.Designer.cs">
+      <DependentUpon>UcVehicleStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Common\UcVehicleStatus_.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Common\UcVehicleStatus_.Designer.cs">
+      <DependentUpon>UcVehicleStatus_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Configs\UcConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Configs\UcConfig.Designer.cs">
+      <DependentUpon>UcConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Configs\UcGSConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Configs\UcGSConfig.Designer.cs">
+      <DependentUpon>UcGSConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Configs\UcParameters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Configs\UcParameters.Designer.cs">
+      <DependentUpon>UcParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Monitors\Marker\GMapDrone.cs" />
+    <Compile Include="Ucs\Monitors\UcHud.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Monitors\UcHud.Designer.cs">
+      <DependentUpon>UcHud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Monitors\UcMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Monitors\UcMonitor.Designer.cs">
+      <DependentUpon>UcMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Monitors\UcMonitorMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Monitors\UcMonitorMap.Designer.cs">
+      <DependentUpon>UcMonitorMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration.Designer.cs">
+      <DependentUpon>UcCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration_Accel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration_Accel.Designer.cs">
+      <DependentUpon>UcCalibration_Accel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration_Compass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration_Compass.Designer.cs">
+      <DependentUpon>UcCalibration_Compass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration_ESC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration_ESC.Designer.cs">
+      <DependentUpon>UcCalibration_ESC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration_Radio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Setups\Calibrations\UcCalibration_Radio.Designer.cs">
+      <DependentUpon>UcCalibration_Radio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Setups\UcFirmwareInstall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Setups\UcFirmwareInstall.Designer.cs">
+      <DependentUpon>UcFirmwareInstall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ucs\Setups\UcSetup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ucs\Setups\UcSetup.Designer.cs">
+      <DependentUpon>UcSetup.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ucs\Common\FormConnection.resx">
+      <DependentUpon>FormConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeachGS.resx">
+      <DependentUpon>PeachGS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeachGS2.resx">
+      <DependentUpon>PeachGS2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ucs\Common\FormInputText.resx">
+      <DependentUpon>FormInputText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Common\ListUserControl.resx">
+      <DependentUpon>ListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Common\UcCommandTest.resx">
+      <DependentUpon>UcCommandTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Common\UcConnectedVehicle.resx">
+      <DependentUpon>UcConnectedVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Common\UcRadioSignal.resx">
+      <DependentUpon>UcRadioSignal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Common\UcVehicleStatus.resx">
+      <DependentUpon>UcVehicleStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Common\UcVehicleStatus_.resx">
+      <DependentUpon>UcVehicleStatus_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Configs\UcConfig.resx">
+      <DependentUpon>UcConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Configs\UcGSConfig.resx">
+      <DependentUpon>UcGSConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Configs\UcParameters.resx">
+      <DependentUpon>UcParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Monitors\UcHud.resx">
+      <DependentUpon>UcHud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Monitors\UcMonitor.resx">
+      <DependentUpon>UcMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Monitors\UcMonitorMap.resx">
+      <DependentUpon>UcMonitorMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Setups\Calibrations\UcCalibration.resx">
+      <DependentUpon>UcCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Setups\Calibrations\UcCalibration_Accel.resx">
+      <DependentUpon>UcCalibration_Accel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Setups\Calibrations\UcCalibration_Compass.resx">
+      <DependentUpon>UcCalibration_Compass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Setups\Calibrations\UcCalibration_ESC.resx">
+      <DependentUpon>UcCalibration_ESC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Setups\Calibrations\UcCalibration_Radio.resx">
+      <DependentUpon>UcCalibration_Radio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Setups\UcFirmwareInstall.resx">
+      <DependentUpon>UcFirmwareInstall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ucs\Setups\UcSetup.resx">
+      <DependentUpon>UcSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Firmwares\ArduPilot\arducopter.apj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Calibration\accel_backside.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Calibration\accel_left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Calibration\accel_level.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Calibration\accel_nosedown.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Calibration\accel_noseup.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Calibration\accel_right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\arrow_red.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\HUD\back_gradataion.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\HUD\back_gradation_bar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\HUD\compass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\HUD\compass1.png" />
+    <Content Include="Resources\HUD\compass_empty.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\config.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\drone32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\drone_connection.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\monitoring.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\setup.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\thepeachci.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\thepeachci136x80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Battery\battery_enough.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Battery\battery_high.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Battery\battery_low.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Battery\battery_no.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Battery\battery_verylow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\GPS\GPS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\GPS\GPS_no.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\GPS\GPS_on.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Signal\signal_enough.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Signal\signal_high.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Signal\signal_low.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Signal\signal_no.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VehicleStatus\Signal\signal_verylow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wifi.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PeachController\PeachController.csproj">
+      <Project>{36809fe0-953e-4567-a701-d7a939feaae7}</Project>
+      <Name>PeachController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PeachModel\PeachModel.csproj">
+      <Project>{fc66d582-79ac-47f7-bfb9-e4f596091bfb}</Project>
+      <Name>PeachModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Firmwares\PX4\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" />
+</Project>
